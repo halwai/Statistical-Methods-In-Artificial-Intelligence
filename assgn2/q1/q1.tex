@@ -1,0 +1,17 @@
+\documentclass[a4paper,12pt]{article}
+\begin{document}
+\vspace{30pt}
+\begin{eqnarray*}
+\delta = (a(k + 1) - \alpha \hat{a})^2 \\
+a(k+1) = a(k) + y_k \\
+\delta = ||a(k) - \alpha \hat{a}||^2 + 2 ( a(k) - \alpha \hat{a} )^ty_k + ||y_k||^2 \\
+\delta \leq ||a(k) - \alpha \hat{a}||^2 - 2\alpha \hat{a}^ty_k + ||y_k||^2 \\
+\beta^2 = max_i y^2     \forall i \\
+\Omega  = min [\hat{a} y_k] \forall y_k \in datasamples\\
+\delta \leq ||a(k) - \alpha \hat{a}||^2 - 2\alpha \Omega + \beta^2 \\
+\alpha = \beta^2 / \Omega \\
+\delta = ||a(k) - \alpha \hat{a}||^2 - \beta^2 \\
+(a(k + 1) - \alpha \hat{a})^2 \leq (a(k + 1) - \alpha \hat{a})^2 -\beta^2\\
+k_0=\frac{||a(1) - \alpha \hat{a}||^2}{\beta^2}\\
+\end{eqnarray*}
+\end{document}

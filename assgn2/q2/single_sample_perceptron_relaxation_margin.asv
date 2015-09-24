@@ -1,0 +1,28 @@
+% single sample perceptron with relaxation proceures for linear classification
+% input 
+% X:: normalised setup of two category linearly seprable class
+% output
+% weights :: if seprable correct weights
+function weights = single_sample_perceptron_relaxation_margin(X)
+
+nn= 0.005; % the ita factor
+
+[m,d]=size(X);
+theta=zeros([d ,1]); %random initalization of weight vectors
+
+limit = 1000 ; % limit in number of loops so if no convergence is found loop still exits
+
+for s=1:limit
+    flag=1;
+    for i=1:m
+        temp= X(i,:);
+        if temp*theta <= b
+            theta = theta + nn*( temp' )/abs(temp) ;
+            flag=0;
+        end
+    end
+    if flag
+        break;
+    end
+end
+weights=theta;
